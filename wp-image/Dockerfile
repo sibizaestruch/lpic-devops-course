@@ -10,4 +10,7 @@ RUN curl -s https://es.wordpress.org/latest-es_ES.tar.gz -o wp.tar.gz && \
     tar xC /var/www/html -f wp.tar.gz --strip 1 && \
     rm wp.tar.gz
 
+EXPOSE 80
+
+
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
